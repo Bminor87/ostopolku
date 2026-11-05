@@ -59,6 +59,108 @@
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-ring: var(--sidebar-ring);
+
+    --color-brand: var(--brand);
+    --color-brand-foreground: var(--brand-foreground);
+    --color-brand-soft: var(--brand-soft);
+    --color-segment-a: var(--segment-a);
+    --color-segment-b: var(--segment-b);
+    --color-segment-c: var(--segment-c);
+    --color-segment-d: var(--segment-d);
+
+    --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    --animate-float: float 6s ease-in-out infinite;
+    --animate-wave: wave 1.2s ease-in-out infinite;
+    --animate-shimmer: shimmer 3s linear infinite;
+    --animate-pop: pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    --animate-draw: draw 2.4s cubic-bezier(0.65, 0, 0.35, 1) both;
+
+    @keyframes fade-up {
+        from {
+            opacity: 0;
+            transform: translateY(1.25rem);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes float {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-0.6rem);
+        }
+    }
+
+    @keyframes wave {
+        0%,
+        100% {
+            transform: scaleY(0.35);
+        }
+        50% {
+            transform: scaleY(1);
+        }
+    }
+
+    @keyframes shimmer {
+        from {
+            background-position: 0% 50%;
+        }
+        to {
+            background-position: 200% 50%;
+        }
+    }
+
+    @keyframes pop {
+        from {
+            opacity: 0;
+            transform: scale(0.92);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes draw {
+        from {
+            stroke-dashoffset: 1;
+        }
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+}
+
+/*
+ * Every clickable surface in the presentation shares this hover treatment so
+ * viewers can always tell what is interactive.
+ */
+@utility clickable {
+    cursor: pointer;
+    transition:
+        transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.25s ease,
+        border-color 0.25s ease,
+        background-color 0.25s ease;
+
+    &:hover,
+    &:focus-visible {
+        transform: translateY(-3px);
+        border-color: var(--brand);
+        box-shadow:
+            0 0 0 3px color-mix(in oklab, var(--brand) 30%, transparent),
+            0 12px 32px -12px color-mix(in oklab, var(--brand) 55%, transparent);
+        outline: none;
+    }
+
+    &:active {
+        transform: translateY(0) scale(0.98);
+    }
 }
 
 :root {
@@ -95,6 +197,13 @@
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.87 0 0);
+    --brand: oklch(0.68 0.19 45);
+    --brand-foreground: oklch(0.99 0 0);
+    --brand-soft: oklch(0.96 0.04 60);
+    --segment-a: oklch(0.6 0.2 290);
+    --segment-b: oklch(0.65 0.2 350);
+    --segment-c: oklch(0.65 0.15 165);
+    --segment-d: oklch(0.62 0.16 240);
 }
 
 .dark {
@@ -130,6 +239,13 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(0.269 0 0);
     --sidebar-ring: oklch(0.439 0 0);
+    --brand: oklch(0.75 0.17 55);
+    --brand-foreground: oklch(0.18 0.02 50);
+    --brand-soft: oklch(0.27 0.05 50);
+    --segment-a: oklch(0.72 0.17 290);
+    --segment-b: oklch(0.74 0.17 350);
+    --segment-c: oklch(0.76 0.14 165);
+    --segment-d: oklch(0.72 0.14 240);
 }
 
 @layer base {
@@ -139,5 +255,15 @@
 
     body {
         @apply bg-background text-foreground;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
