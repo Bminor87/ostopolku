@@ -70,7 +70,7 @@ const tasks: Task[] = [
         title: 'Tarkistus ja vastuu',
         author: 100,
         authorDid:
-            'Luen ja tarkistan sisällön sekä muokkaan sitä ennen palautusta. Vastaan työn oikeellisuudesta.',
+            'Luin ja tarkistin sisällön sekä muokkasin sitä ennen palautusta. Pyysin tekoälyä vaihtamaan muutamaa lähdettä. Vastaan työn oikeellisuudesta.',
         aiDid: '—',
     },
 ];
