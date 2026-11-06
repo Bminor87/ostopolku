@@ -231,10 +231,10 @@ export default function Tekoaly() {
                         tiedonhaut ja rakensi lopuksi sovelluksen. Joitakin
                         sivustoja (esimerkiksi VI-Control, Reddit ja Gearspace)
                         se ei päässyt lukemaan. Niihin perustuvia väitteitä ei
-                        ole käytetty, eikä NI 360:n nykyisiä normaalihintoja
-                        voitu tarkistaa, koska ne näkyvät vasta kirjautumisen
-                        jälkeen. Siksi esityksessä käytetään vuoden 2024
-                        julkaisuhintoja.
+                        ole käytetty. NI 360:n nykyiset hinnat näkyvät vasta
+                        kirjautumisen jälkeen, joten tarkistin ne itse NI:n
+                        tilaussivulta ja pyysin tekoälyä päivittämään ne
+                        sovellukseen.
                     </Reveal>
                 </div>
             </Section>

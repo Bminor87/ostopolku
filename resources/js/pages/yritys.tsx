@@ -95,7 +95,7 @@ const milestones: Milestone[] = [
 
 type Tier = {
     name: string;
-    launchPrice: string;
+    price: string;
     plugins: string;
     instruments: string;
     sounds: string;
@@ -108,7 +108,7 @@ type Tier = {
 const tiers: Tier[] = [
     {
         name: 'Essentials',
-        launchPrice: '15 €/kk',
+        price: '15 €/kk tai 150 €/v',
         plugins: '60+',
         instruments: '40+',
         sounds: '9 000+',
@@ -123,7 +123,7 @@ const tiers: Tier[] = [
     },
     {
         name: 'Plus',
-        launchPrice: '25 €/kk',
+        price: '25 €/kk tai 250 €/v',
         plugins: '110+',
         instruments: '90+',
         sounds: '18 000+',
@@ -138,7 +138,7 @@ const tiers: Tier[] = [
     },
     {
         name: 'Pro',
-        launchPrice: '50 €/kk',
+        price: '55 €/kk tai 550 €/v',
         plugins: '150+',
         instruments: '120+',
         sounds: '24 000+',
@@ -313,7 +313,7 @@ export default function Yritys() {
                                 {item.name}
                             </span>
                             <span className="mt-2 block text-sm text-muted-foreground">
-                                Julkaisuhinta {item.launchPrice}
+                                {item.price}
                             </span>
                             <span
                                 className={cn(
@@ -369,15 +369,19 @@ export default function Yritys() {
                     </div>
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                    Tasojen sisältö
-                    <Cite refs={['ni-360', 'ni-included']} />. Julkaisuhinnat
-                    euroina
-                    <Cite refs="baizan" />. Pro-tason 44 lisäinstrumenttia ovat
-                    pääosin orkesteri- ja elokuvamusiikkikirjastoja, ja vain Pro
-                    sisältää täyden Kontakt 8:n, jota tarvitaan monien
-                    kolmansien osapuolten kirjastojen avaamiseen. Tuotteita voi
-                    käyttää kolmella tietokoneella ja ilman verkkoyhteyttä,
-                    kunhan tilaus tarkistetaan kerran kuukaudessa.
+                    Tasojen sisältö ja hinnat
+                    <Cite refs={['ni-360', 'ni-included']} />. Vuositilaus
+                    maksaa kymmenen kuukauden hinnan, ja tilausta voi kokeilla
+                    14 päivää ilmaiseksi
+                    <Cite refs="ni-360" />. Julkaisun aikaan vuonna 2024
+                    Pro-taso maksoi 50 €/kk
+                    <Cite refs="baizan" />, joten sen hinta on noussut.
+                    Pro-tason 44 lisäinstrumenttia ovat pääosin orkesteri- ja
+                    elokuvamusiikkikirjastoja, ja vain Pro sisältää täyden
+                    Kontakt 8:n, jota tarvitaan monien kolmansien osapuolten
+                    kirjastojen avaamiseen. Tuotteita voi käyttää kolmella
+                    tietokoneella ja ilman verkkoyhteyttä, kunhan tilaus
+                    tarkistetaan kerran kuukaudessa.
                     <Cite refs="ni-faq" paragraph /> Opiskelijat saavat Plus- ja
                     Pro-tason puoleen hintaan (125 tai 250 USD/vuosi)
                     <Cite refs="ni-edu" />. Huom! iZotope-tuotteet eivät enää

@@ -417,7 +417,7 @@ const empathy: EmpathyQuadrant[] = [
         icon: MessageSquareQuote,
         title: 'Mitä hän sanoo?',
         items: [
-            '”50 euroa kuussa on halvempaa kuin yksikin uusi kirjasto.”',
+            '”55 euroa kuussa on halvempaa kuin yksikin uusi kirjasto.”',
             '”Tilaan Pron vain tämän sarjan ajaksi.”',
         ],
     },
@@ -692,7 +692,7 @@ const profileQuestions: { question: string; answer: string }[] = [
     },
     {
         question: 'Kuinka paljon he tuovat rahaa?',
-        answer: 'Pro-tason julkaisuhinnalla 50 €/kk eli noin 600 €/vuosi kuukausilaskutuksella.',
+        answer: 'Pro-tason hinnalla 550 €/vuosi tai 660 €/vuosi kuukausilaskutuksella (55 €/kk).',
     },
 ];
 
@@ -748,8 +748,8 @@ function CustomerProfileTab() {
                 ))}
             </div>
             <p className="mt-3 text-xs text-muted-foreground">
-                Spitfire Audion omistus <Cite refs="roche-spitfire" />;
-                julkaisuhinta <Cite refs="baizan" />.
+                Spitfire Audion omistus <Cite refs="roche-spitfire" />; hinta
+                <Cite refs="ni-360" />.
             </p>
         </div>
     );

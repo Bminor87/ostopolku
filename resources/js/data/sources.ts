@@ -139,7 +139,7 @@ const list: Source[] = [
         cite: 'Native Instruments s.a. c',
         entry: 'Native Instruments s.a. c. 360 subscription.',
         url: 'https://www.native-instruments.com/pages/360-subscription',
-        accessed: READ,
+        accessed: '6.11.2026',
         category: 'Native Instruments',
     },
     {

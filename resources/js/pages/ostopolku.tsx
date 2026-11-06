@@ -407,7 +407,7 @@ const decisionCriteria: { key: CriterionKey; label: string }[] = [
 const options: Option[] = [
     {
         name: 'NI 360 Pro',
-        price: '50 €/kk (julkaisuhinta)',
+        price: '55 €/kk tai 550 €/v',
         scores: {
             price: 2,
             kontakt: 5,
@@ -418,7 +418,7 @@ const options: Option[] = [
         note: (
             <>
                 Täysi Kontakt 8 ja koko Symphony Series
-                <Cite refs={['baizan', 'ni-included']} />.
+                <Cite refs={['ni-360', 'ni-included']} />.
             </>
         ),
     },
